@@ -1,0 +1,23 @@
+﻿<div class="metadata-field">
+    <label 
+        for="@Meta.Type"class="field-name">@Meta.Name</label>
+    <input 
+        id="@Meta.Type"
+        type="@Meta.InputType"
+        name="@Meta.Name"
+        class="field-type" 
+        @bind="Meta.Type"
+    />
+    <div class="field-value">@Meta.Value</div>
+    <div class="field-buttons">
+        @if (isEditing)
+        {
+            <button class="small-button" @onclick="SaveValue">Save</button>
+            <button class="small-button" @onclick="ResetValue">Reset</button>
+        }
+        else
+        {
+            <button class="small-button" @onclick="EditValue">Edit</button>
+        }
+    </div>
+</div>

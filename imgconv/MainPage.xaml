@@ -1,14 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:imgconv"
+             xmlns:local="clr-namespace:imgconv.Pages"
              x:Class="imgconv.MainPage"
-             BackgroundColor="{DynamicResource PageBackgroundColor}">
+            >
+    
+    
+    <ContentPage Title="Live Batching">
+        <BlazorWebView HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type local:Home}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage>
 
-    <BlazorWebView x:Name="blazorWebView" HostPage="wwwroot/index.html">
-        <BlazorWebView.RootComponents>
-            <RootComponent Selector="#app" ComponentType="{x:Type local:Routes}" />
-        </BlazorWebView.RootComponents>
-    </BlazorWebView>
+    <ContentPage Title="Per File">
+        <BlazorWebView HostPage="wwwroot/index.html">
+            <BlazorWebView.RootComponents>
+                <RootComponent Selector="#app" ComponentType="{x:Type local:Counter}" />
+            </BlazorWebView.RootComponents>
+        </BlazorWebView>
+    </ContentPage>
 
-</ContentPage>
+</TabbedPage>

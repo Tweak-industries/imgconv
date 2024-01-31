@@ -1,0 +1,53 @@
+﻿<section title="metadata">
+    @foreach (var Meta in ImageMetas)
+    {
+        <MetadataField Meta=@Meta />
+    }
+</section>
+@code {
+    
+[Parameter]
+    public List<Metadata> ImageMetas { get; set; }
+
+protected override void OnInitialized()
+    {
+        ImageMetas = new List<Metadata>();
+    }
+
+public void AddMetadata(Metadata Meta)
+    {
+        ImageMetas.Add(Meta);
+    }
+
+public void RemoveMetadata(Metadata Meta)
+    {
+        ImageMetas.Remove(Meta);
+    }
+
+public void ClearMetadata()
+    {
+        ImageMetas.Clear();
+    }
+
+public void UpdateMetadata(Metadata Meta)
+    {
+        var index = ImageMetas.FindIndex(x => x.Name == Meta.Name);
+        ImageMetas[index] = Meta;
+    }
+
+public void UpdateMetadata(string Name, string Value)
+    {
+        var index = ImageMetas.FindIndex(x => x.Name == Name);
+        ImageMetas[index].Value = Value;
+    }
+
+public void UpdateMetadata(string Name, string Value, string Type)
+    {
+        var index = ImageMetas.FindIndex(x => x.Name == Name);
+        ImageMetas[index].Value = Value;
+        ImageMetas[index].Type = Type;
+    }
+
+
+
+}

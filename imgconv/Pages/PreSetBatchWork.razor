@@ -1,0 +1,62 @@
+﻿@page "/ConversionPrep"
+
+
+
+<h3>Image convert settings</h3>
+
+<section>
+
+    <MetadataField ImageMetas="ImageMetas" />
+
+    <section title="image processing">
+        @foreach (var Process in ImageProcesses)
+        {
+            <tr>
+                <td>@Process.name</td>
+                <td>@Process.value</td>
+                <td>@Process.type</td>
+            </tr>
+        }
+    </section>
+    <button>Metadata</button>
+    <button>Image Processing</button>
+</section>
+<section title="buttons">
+    <button>Back</button>
+    <button>Run on set</button>
+    <button>Run recursive</button>
+</section>
+
+<!--
+
+    then the metadata fields as a tab1
+    the metadata as a table, left the name, middle the value, right the type
+    if the data is original then the value is already pre-filled
+    if the data is new then the value is empty
+    if the data is changed a light 'old value' is shown in the background aligned to the right'
+
+
+    and the image processing options as tab2
+    image processing possibilitys:
+    - resize
+    - crop
+    - rotate
+    - mirror
+    - grayscale
+    - blur
+    - sharpen
+    - brightness
+    - contrast
+    - gamma
+    - invert
+
+
+    the buttons at the bottom
+    - Back
+    - Run Batch on set
+    - Run Batch recursive
+
+ -->
+@code {
+
+}

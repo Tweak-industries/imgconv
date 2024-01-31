@@ -1,0 +1,27 @@
+﻿.metadata-field {
+    display: flex;
+    flex-direction: column;
+
+    .field-name {
+        text-align: left;
+    }
+
+    .field-type {
+        text-align: right;
+    }
+
+    .field-value {
+        width: auto;
+        display: inline-block;
+    }
+
+    .field-buttons {
+        display: flex;
+        justify-content: space-between;
+
+        .small-button {
+            width: 20px;
+            height: 20px;
+    }
+    }
+}
